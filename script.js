@@ -11,14 +11,35 @@ canvas.width  = tailleCanvas;
 canvas.height = tailleCanvas;
 canvas.style.border = "solid 1px gold";
 
-const iyad  = new Image();
+/*const iyad  = new Image();
 iyad.src    = "iyad.png";
-iyad.onload = ()=>context.drawImage(iyad,0,0);
+iyad.onload = ()=>context.drawImage(iyad,0,0);*/
 
-let couleur = "rgba(255, 145, 167, 0.5)"; // couleur par defaut
 
-let idInput=  document.getElementById("input");
-let idCouleur= document.getElementById("couleur");
+function loadFile() 
+{
+  var image = new Image();
+  var reader  = new FileReader();
+  
+  reader.onload = ()=> image.src = reader.result;
+  reader.readAsDataURL(inputImage.files[0]);
+  
+  image.onload = ()=> context.drawImage(image,0,0);
+
+  setTimeout(quadrillage, 100); // obligatoire sinon le quadrillage sera caché par l'image qui charge plus lentement
+
+}
+
+const inputImage = document.getElementById("inputImage");
+
+inputImage.onchange = loadFile;
+
+
+
+let couleur   = "rgba(255, 145, 167, 0.5)"; // couleur par defaut
+
+let idInput   =  document.getElementById("input");
+let idCouleur = document.getElementById("couleur");
 
 
 //--------------------Quadrillage----------------------------
@@ -39,7 +60,7 @@ function quadrillage()
 	}
 }
 
-setTimeout(quadrillage, 100); // obligatoire sinon le quadrillage sera caché par l'image qui charge plus lentement
+
 
 
 //---------------------------Coloration pixel---------------------
@@ -162,7 +183,7 @@ idNoir.addEventListener("click", function(){
 canvas.addEventListener("mousemove", function(event){
 
 let idgps= document.getElementById("gps");
-idClient.textContent=`Coordonnées Souris => x:${event.clientX-8} / y:${event.clientY-9}`;
+idgps.textContent=`Coordonnées Souris => x:${event.clientX-8} / y:${event.clientY-9}`;
 });
 
 
