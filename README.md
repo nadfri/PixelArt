@@ -1,2 +1,2 @@
 # PixelArt
-Petite application basé sur le CANVAS
+Petite application basée sur le CANVAS
