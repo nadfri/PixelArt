@@ -9,9 +9,9 @@
 
 <body>
     <canvas id="canvas"></canvas><br>
-    <input type="file" id="inputImage" accept="image/*"><br>
-    <input type="text" id="input" placeholder="Choose English Color">
-    <button id="couleur">Couleur</button>
+    Choisis une image <input type="file" id="inputImage" accept="image/*"><br>
+    <input type="text" id="inputCouleur" placeholder="Choose UK Color or #Hexa">
+    <button id="btCouleur">Couleur</button>
     <br>
     <br>
     <button id="rose">Rose</button>
@@ -24,12 +24,19 @@
     <button id="jaune">Jaune</button>
     <button id="gris">Gris</button>
     <button id="orange">Orange</button>
-    <br>                                          
+    <br>
     <br>
     <button id="peau">Peau</button>
     <button id="effacer">Blanc</button>
     <button id="noir">Noir</button>
-
+    <br>
+    <br>
+    <div id="divDownload">
+        <a href="" id="download" download="MonPixelArt.jpg">
+            <button>Telecharger votre PixelArt</button>
+        </a>
+    </div>
+    
     <div id="gps"></div>
 </body>
 
